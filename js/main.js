@@ -16,7 +16,7 @@ function getServerData(url) {
 }
 
 function startGetUsers() {
-    getServerData("https://api.jsonbin.io/b/5ef98c6bbb5fbb1d2560b1e7/").then(
+    getServerData("https://api.jsonbin.io/b/5ef9b18e0bab551d2b689dc4").then(
         data => fillDataTable(data, "userTable")
     );
 }
@@ -91,7 +91,7 @@ function delRow(btn) {
         cache: "no-cache"
     };
 
-    fetch(`https://api.jsonbin.io/b/5ef98c6bbb5fbb1d2560b1e7/${id}`, fetchOptions).then(
+    fetch(`https://api.jsonbin.io/b/5ef9b18e0bab551d2b689dc4/${id}`, fetchOptions).then(
         resp => resp.json(),
         err => console.error(err)
     ).then(
@@ -140,7 +140,7 @@ function createUser(btn) {
         body: JSON.stringify(data)
     };
 
-    fetch(`https://api.jsonbin.io/b/5ef98c6bbb5fbb1d2560b1e7/`, fetchOptions).then(
+    fetch(`https://api.jsonbin.io/b/5ef9b18e0bab551d2b689dc4`, fetchOptions).then(
         resp => resp.json(),
         err => console.error(err)
     ).then(
@@ -169,7 +169,7 @@ function setRow(btn) {
         body: JSON.stringify(data)
     };
 
-    fetch(`http://localhost:3000/users/${data.id}`, fetchOptions).then(
+    fetch(`https://api.jsonbin.io/b/5ef9b18e0bab551d2b689dc4/${data.id}`, fetchOptions).then(
         resp => resp.json(),
         err => console.error(err)
     ).then(
